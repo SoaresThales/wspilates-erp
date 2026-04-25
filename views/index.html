@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Comprovantes</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        input { display: block; margin-bottom: 10px; padding: 8px; width: 300px; }
+        button { padding: 10px 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Gerar Comprovante</h1>
+    <div>
+        <input type="text" id="nome" placeholder="Nome Completo do Aluno" required>
+        <input type="text" id="cpf" placeholder="CPF (Apenas números)" required>
+        <input type="text" id="valor" placeholder="Valor Pago (Ex: 150,00)" required>
+        <input type="text" id="forma" placeholder="Forma de Pagamento (Pix, Cartão)" required>
+        <input type="date" id="data" required>
+        <input type="text" id="mes_referencia" placeholder="Mês Referência (Ex: 04/2026)" required> 
+        
+        <!-- Campos adicionais necessários -->
+        <label for="frequencia">Frequência:</label>
+        <input type="text" id="frequencia" name="frequencia" placeholder="Ex: 2x na semana" required>
+
+        <label for="plano">Plano:</label>
+        <select id="plano" name="plano" onchange="toggleParcelas()">
+    <option value="Mensal">Mensal</option>
+    <option value="Semestral">Semestral</option>
+    <option value="Anual">Anual</option>
+</select>
+
+        <div id="campos_parcelas" style="display: none;">
+            <label for="parcela_atual">Parcela Atual:</label>
+            <input type="number" id="parcela_atual" name="parcela_atual" value="1">
+            
+            <label for="total_parcelas">Total de Parcelas:</label>
+            <input type="number" id="total_parcelas" name="total_parcelas" value="1">
+        </div>
+
+        <button onclick="enviarDados()">Gerar e Salvar PDF</button>
+    </div>
+
+    <script>
+    // Lógica para mostrar parcelas apenas se não for Mensal
+    function toggleParcelas() {
+        const planoSelecionado = document.getElementById('plano').value;
+        const divParcelas = document.getElementById('campos_parcelas');
+        
+        if (planoSelecionado === 'Mensal') {
+            divParcelas.style.display = 'none'; // Esconde
+        } else {
+            divParcelas.style.display = 'block'; // Mostra de forma consistente com os outros campos
+        }
+    }
+</script>
+    <script src="/javascripts/main.js"></script>
+</body>
+</html>

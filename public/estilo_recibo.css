@@ -1,0 +1,105 @@
+:root {
+    --cor-texto: #333;
+    --cor-borda: #333;
+    --cor-fundo-papel: white;
+    --cor-fundo-preview: #525659;
+    --cor-sombra: rgba(0, 0, 0, 0.5);
+}
+
+/* --- ESTILOS GERAIS --- */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--cor-texto);
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--cor-borda);
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.logo-recibo {
+    width: 120px;
+    height: auto;
+}
+
+.header-content {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.header-content h1 {
+    white-space: nowrap;
+    margin-bottom: 5px;
+    font-size: 32px;
+}
+
+.cabecalho::after {
+    content: "";
+    display: block;
+    width: 120px; 
+}
+
+.detalhes {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.data {
+    margin-top: 40px;
+    text-align: right;
+    font-style: italic;
+    font-size: 18px;
+}
+.assinatura {
+    margin-top: 90px;
+    text-align: center;
+    line-height: 0.8;
+}
+
+.img-assinatura {
+    max-width: 300px; /* Largura máxima da linha */
+    height: auto;
+    display: block;
+    margin: 0 auto 5px auto;
+}
+
+.cnpj {
+    font-size: 14px;
+}
+
+/* --- MODO TELA --- */
+@media screen {
+    html {
+        background-color: var(--cor-fundo-preview);
+        padding: 40px 0;
+    }
+    
+    body {
+        background-color: var(--cor-fundo-papel);
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto;
+        padding: 40px;
+        box-shadow: 0 5px 15px var(--cor-sombra);
+        box-sizing: border-box;
+    }
+}
+
+/* --- MODO IMPRESSÃO --- */
+
+@page {
+    size: A4 portrait;
+    margin: 15mm;
+}
+
+@media print {
+    html, body {
+        background-color: var(--cor-fundo-papel);
+        margin: 0;
+        padding: 0;
+    }
+}

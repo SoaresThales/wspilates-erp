@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Preview do Recibo</title>
+</head>
+<body>
+    <div class="cabecalho">
+        <!-- A tag src deve ser exatamente igual à definida no app.js -->
+        <img src="<<LOGO_BASE64>>" alt="Logo WS Pilates" class="logo-recibo">
+        <div class="header-content">
+            <h1>Recibo de Pagamento</h1>
+            <p>Referência: <<MES_REFERENCIA>></p>
+        </div>
+    </div>
+
+    <div class="detalhes">
+        <p>Recebemos de <strong><<NOME>></strong>, inscrito(a) no CPF sob o nº <strong><<CPF>></strong>, a quantia de <strong>R$ <<VALOR>></strong>.</p>
+        
+        <p>Referente aos serviços de pilates <strong><<FREQUENCIA>></strong>, plano <strong><<INFO_PLANO>></strong>, pagos através de <strong><<FORMA_PAGAMENTO>></strong>.</p>
+    </div>
+
+    <div class="data">
+        <p>Curitiba, <<DATA>></p>
+    </div>
+
+    <div class="assinatura">
+        <img src="<<ASSINATURA_BASE64>>" alt="Assinatura" class="img-assinatura">
+        <p>_________________________________________</p>
+        <p>Wonzoski & Soares LTDA</p>
+        <p class="cnpj">CNPJ: 24.917.330/0001-04</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+services:
+  db_wspilates:
+    image: postgres:15-alpine
+    container_name: postgres_wspilates
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER:-ws_admin}          # usa do .env ou fallback
+      POSTGRES_PASSWORD: ${DB_PASSWORD}            # sem fallback – obrigatório no .env
+      POSTGRES_DB: ${DB_NAME:-ws_pilates_app}      # usa do .env ou fallback
+    ports:
+      - "${DB_PORT:-5432}:5432"                    # porta também parametrizável
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-ws_admin} -d ${DB_NAME:-ws_pilates_app}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pg_data:
+    name: wspilates_db_data
