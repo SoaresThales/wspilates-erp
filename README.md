@@ -37,7 +37,7 @@ Production-ready and in use.
 ---
 
 ## Project Structure
-
+```
 wspilates-erp/
 │
 ├── public/
@@ -67,7 +67,7 @@ wspilates-erp/
 ├── package.json
 ├── package-lock.json
 └── README.md
-
+```
 ---
 
 ## Execution Flow (Core Feature)
