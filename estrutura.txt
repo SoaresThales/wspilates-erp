@@ -1,0 +1,35 @@
+[01;34m.[0m
+├── [01;34mbin[0m
+│   └── [01;32mwww[0m
+├── [01;34mcertificados[0m
+│   └── ws_pilates.pfx
+├── [01;34mpublic[0m
+│   ├── [01;34mimages[0m
+│   │   ├── favicon.ico
+│   │   ├── [01;35mlogo.png[0m
+│   │   └── [01;35msignature.png[0m
+│   ├── [01;34mjavascripts[0m
+│   │   └── main.js
+│   ├── [01;34mstylesheets[0m
+│   │   └── style.css
+│   └── estilo_recibo.css
+├── [01;34mroutes[0m
+│   ├── index.js
+│   └── users.js
+├── [01;34mviews[0m
+│   ├── error.jade
+│   ├── index.html
+│   ├── index.jade
+│   ├── layout.jade
+│   └── template_recibo.html
+├── app.js
+├── docker-compose.yml
+├── .env
+├── .env.example
+├── estrutura.txt
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
+
+9 directories, 24 files
