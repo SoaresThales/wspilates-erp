@@ -2,8 +2,8 @@
 
 > Internal SaaS system for operational, financial, and communication management of WS Pilates.
 
-![Status](https://img.shields.io/badge/status-in%20development-yellow)
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Status](https://img.shields.io/badge/status-active-success)
+![Version](https://img.shields.io/badge/version-1.1.0-blue)
 ![Node.js](https://img.shields.io/badge/node.js-backend-339933?logo=node.js)
 ![PostgreSQL](https://img.shields.io/badge/postgresql-database-4169E1?logo=postgresql)
 ![Docker](https://img.shields.io/badge/docker-container-2496ED?logo=docker)
@@ -23,11 +23,11 @@ It started as a simple script and evolved into a structured backend system desig
 
 ---
 
-## Current State (v1.0 — Receipt Engine)
+## Current State (v1.1 — Organized Engine)
 
 Production-ready and in use.
 
-- Dynamic PDF generation from HTML templates (Puppeteer)
+- Refactored Frontend logic with modular `main.js`
 - Digital signature using e-CNPJ certificate (P12/PFX)
 - Legally valid documents generated server-side
 - Business rules for payment plans (monthly, semiannual, annual)
@@ -39,31 +39,31 @@ Production-ready and in use.
 ## Project Structure
 ```
 wspilates-erp/
-│
 ├── public/
 │ ├── images/
 │ ├── javascripts/
-│ │ └── main.js
+│ │ └── main.js # Refactored for clarity and maintenance
 │ └── stylesheets/
 │ ├── style.css
 │ └── estilo_recibo.css
-│
 ├── routes/
 │ ├── index.js
 │ └── users.js
-│
 ├── views/
 │ ├── error.jade
 │ ├── index.jade
 │ ├── layout.jade
 │ ├── index.html
 │ └── template_recibo.html
-│
+├── cert/ # Digital certificates (P12/PFX)
+├── bin/
+│ └── www # Server entry point
 ├── .env
 ├── .env.example
 ├── .gitignore
 ├── app.js
-├── banco_recibos.db
+├── docker-compose.yml # Infrastructure for PostgreSQL
+├── banco_recibos.db # Legacy storage (Migration active)
 ├── package.json
 ├── package-lock.json
 └── README.md
